@@ -1,116 +1,117 @@
-🏘️ Apartment Prices in Poland – Streamlit Dashboard
-This is an interactive data visualization and machine learning dashboard built using Streamlit, analyzing apartment prices in Poland. The application provides filters, price statistics, and a regression model to predict real estate prices based on apartment features.
+# 🏘️ Apartment Prices in Poland – Streamlit Dashboard
 
-📊 Features
-📁 Load and combine multiple CSV datasets from a folder
+This is an interactive data visualization and machine learning dashboard built using **Streamlit**, analyzing apartment prices in Poland. The application provides filters, price statistics, and a regression model to predict real estate prices based on apartment features.
 
-📍 Filter apartments by:
+---
 
-City
+## 📊 Features
 
-Year
+- 📁 Load and combine multiple CSV datasets from a folder
+- 📍 Filter apartments by:
+  - City
+  - Year
+  - Room count
+  - Area
+  - Price
+- 🧠 Train an XGBoost regression model on selected features
+- 🔮 Predict apartment price based on user input
+- 📈 Display charts:
+  - Feature importance
+  - Average price per city
+  - Price distribution by POI count
+  - Price vs selected features (with regression line)
+  - Boxplot: Price vs number of rooms
+  - Line chart: Price per floor
 
-Room count
+---
 
-Area
+## 🛠️ Tech Stack
 
-Price
+- [Streamlit](https://streamlit.io/)
+- [Pandas](https://pandas.pydata.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [Seaborn](https://seaborn.pydata.org/)
+- [XGBoost](https://xgboost.readthedocs.io/)
+- [Scikit-learn](https://scikit-learn.org/)
 
-🧠 Train an XGBoost regression model on selected features
+---
 
-🔮 Predict apartment price based on user input
+## 📂 Project Structure
 
-📈 Display charts:
-
-Feature importance
-
-Average price per city
-
-Price distribution by POI count
-
-Price vs selected features (with regression line)
-
-Boxplot: Price vs number of rooms
-
-Line chart: Price per floor
-
-🛠️ Tech Stack
-Streamlit
-
-Pandas
-
-Matplotlib
-
-Seaborn
-
-XGBoost
-
-Scikit-learn
-
-📂 Project Structure
-bash
-Kopiuj
-Edytuj
+```
 📁 your_project/
  ├── main.py           # Main Streamlit app
  ├── /archive/         # Folder with CSV files e.g., apartments_pl_2020_01.csv
  └── README.md
-⚠️ The data folder should contain files named like: apartments_pl_2022_06.csv, etc.
+```
 
-🚀 How to Run
-1. Clone the repo
-bash
-Kopiuj
-Edytuj
+> ⚠️ The data folder should contain files named like: `apartments_pl_2022_06.csv`, etc.
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone the repo
+
+```bash
 git clone https://github.com/yourusername/apartment-prices-pl.git
 cd apartment-prices-pl
-2. Install dependencies
-bash
-Kopiuj
-Edytuj
-pip install -r requirements.txt
-Example requirements.txt:
+```
 
-nginx
-Kopiuj
-Edytuj
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+**Example `requirements.txt`:**
+
+```
 streamlit
 pandas
 matplotlib
 seaborn
 xgboost
 scikit-learn
-3. Run the app
-bash
-Kopiuj
-Edytuj
+```
+
+### 3. Run the app
+
+```bash
 streamlit run main.py
-🔍 Prediction Model Details
-Model: XGBoost Regressor
+```
 
-Target: Apartment price
+---
 
-Features:
+## 🤖 Model
 
-squareMeters, rooms, floor, floorCount, buildYear
+**Model:** XGBoost Regressor  
+**Target:** Apartment price
 
-centreDistance, poiCount, schoolDistance, clinicDistance
+**Features:**
 
-postOfficeDistance, kindergartenDistance, restaurantDistance
+- `squareMeters`, `rooms`, `floor`, `floorCount`, `buildYear`
+- `centreDistance`, `poiCount`, `schoolDistance`, `clinicDistance`
+- `postOfficeDistance`, `kindergartenDistance`, `restaurantDistance`
+- `collegeDistance`, `pharmacyDistance`
 
-collegeDistance, pharmacyDistance
+---
 
-🧪 Example Use Cases
-Estimate how much a flat might cost in Gdańsk or Warsaw based on size, rooms, and amenities.
+## 💡 Example Use Cases
 
-Discover which features most affect apartment pricing.
+- Estimate how much a flat might cost in **Gdańsk** or **Warsaw** based on size, rooms, and amenities.
+- Discover which features most affect apartment pricing.
+- Compare price evolution across years and cities.
 
-Compare price evolution across years and cities.
+---
 
-📌 Notes
-The model requires sufficient data. Filtering too narrowly may prevent model training.
+## ❗ Notes
 
-Data cleaning is minimal – ensure input files are consistent.
+- The model requires **sufficient data**. Filtering too narrowly may prevent model training.
+- Data cleaning is **minimal** – ensure input files are consistent.
 
-📄 License
+---
+
+## 🧾 License
+
 MIT License
